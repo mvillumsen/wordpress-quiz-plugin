@@ -3571,8 +3571,6 @@
                 }
             });
 
-            q.shuffleArray(targets);
-
             q.each(t.data, function(group, g) {
 
                 /* find all relevant "piece" elements and put
