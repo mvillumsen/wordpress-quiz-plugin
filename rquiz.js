@@ -445,7 +445,7 @@
             if (q.baseURL && h) {
 
                 l = h.appendChild(q.create({
-                    href: q.baseURL + "/rquiz.css",
+                    href: q.baseURL + "/css/quiz.css",
                     rel: "stylesheet",
                     tagName: "link"
                 }));
