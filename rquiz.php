@@ -13,7 +13,6 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 
 function load_scripts() {
    wp_enqueue_script('quiz', plugins_url('wordpress-quiz-plugin/js/rquiz.js'));
-   wp_enqueue_script('i18n', plugins_url('wordpress-quiz-plugin/js/i18n.js'));
 }
 
 add_action( 'wp_enqueue_scripts', 'load_styles' );
