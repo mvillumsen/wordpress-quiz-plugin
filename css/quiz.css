@@ -1,0 +1,177 @@
+
+@import url(crossword.css);
+@import url(gapfill.css);
+@import url(matching.css);
+@import url(memo.css);
+@import url(multichoice.css);
+@import url(wordguess.css);
+@import url(wordjumble.css);
+@import url(wordsearch.css);
+
+@media screen {
+
+	/* block display until all quizzes have been converted */
+	body:not(.rquiz) .zuordnungs-quiz,
+	body:not(.rquiz) .rquiz-matching,
+	body:not(.rquiz) .lueckentext-quiz,
+	body:not(.rquiz) .rquiz-gapfill,
+	body:not(.rquiz) .memo-quiz,
+	body:not(.rquiz) .rquiz-memo,
+	body:not(.rquiz) .multiplechoice-quiz,
+	body:not(.rquiz) .rquiz-multichoice,
+	body:not(.rquiz) .schuettel-quiz,
+	body:not(.rquiz) .rquiz-wordjumble,
+	body:not(.rquiz) .kreuzwort-quiz,
+	body:not(.rquiz) .rquiz-crossword,
+	body:not(.rquiz) .suchsel-quiz,
+	body:not(.rquiz) .rquiz-wordsearch,
+	body:not(.rquiz) .buchstabenraten-quiz,
+	body:not(.rquiz) .rquiz-wordguess {
+		display: none;
+	}
+
+	/* hide contents that are for paper only */
+	.rquiz-print {
+		display: none;
+	}
+
+	/* styles for initialized quizzes */
+	[id^="rquiz"] {
+		margin: 0 0 2em 0;
+	}
+
+	[id^="rquiz"]:after {
+		clear: left;
+		content: "";
+		display: block;
+	}
+
+	/* styles for drag&drop interaction
+	 * as well as messages and buttons */
+	.rquiz-piece {
+		background: #fff;
+		border-radius: 5px;
+		display: inline-block;
+		margin: 5px;
+		padding: 0.5em 1em;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.rquiz-piece img {
+		vertical-align: bottom;
+		margin: -0.3em -0.8em;
+		padding: 0;
+	}
+
+	.rquiz-piece.rquiz-draggable {
+		background: #efc;
+		box-shadow: 0 0 5px 0 #888;
+		cursor: move;
+	}
+
+	.rquiz-dragging {
+		position: relative;
+		z-index: 1;
+	}
+
+	.rquiz-target.rquiz-highlighted {
+		background: #ffc0c0;
+		box-shadow: 0 0 5px #e00000;
+	}
+
+	.rquiz-pool {
+		background: #eee;
+		box-shadow: 0 0 5px #bbb;
+		display: block;
+		margin: 0;
+		padding: 0;
+		width: calc(100% - 20px);
+	}
+
+	.rquiz-result {
+		background: #cfc;
+		box-shadow: 0 0 5px #bbb;
+		font-weight: bold;
+		text-align: center;
+		width: calc(100% - 20px);
+	}
+
+	/* styles for certain quiz areas */
+	:not(.rquiz-finished) > .rquiz-result,
+	.rquiz-finished .rquiz-pool {
+		display: none;
+	}
+
+	/* styles for buttons */
+	.rquiz-pool button,
+	.rquiz-result button {
+		border-bottom: 1px solid #888;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #888;
+		border-top: 1px solid #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 4px #888;
+		cursor: pointer;
+		font-weight: bold;
+		margin: 8px;
+		padding: 0.5em 2em;
+		text-align: center;
+		text-shadow: 0 0 1px #fff;
+	}
+
+	.rquiz-pool button {
+		background: #fee;
+		color: #f00;
+	}
+
+	.rquiz-result button {
+		background: #efe;
+		color: #080;
+	}
+
+	.rquiz-pool button:active,
+	.rquiz-result button:active {
+		border-bottom: 1px solid #fff;
+		border-left: 1px solid #888;
+		border-right: 1px solid #fff;
+		border-top: 1px solid #888;
+	}
+
+	.rquiz-result.rquiz-waiting button {
+		margin-left: 3em;
+		position: relative;
+	}
+
+	.rquiz-result.rquiz-waiting button:before {
+		background: url(./images/throbber.svg) center center;
+		background-size: 2em 2em;
+		content: " ";
+		display: block;
+		height: 2em;
+		left: -3em;
+		position: absolute;
+		top: 0;
+		vertical-align: middle;
+		width: 2em;
+	}
+
+}
+
+@media print {
+
+	/* hide contents that are for screen only */
+	.rquiz-screen {
+		display: none;
+	}
+
+	.rquiz-pool button,
+	.rquiz-result {
+		display: none;
+	}
+
+	.rquiz-pool span {
+		border: 1pt solid #aaa;
+	}
+
+}

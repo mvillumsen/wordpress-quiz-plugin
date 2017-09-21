@@ -1,0 +1,173 @@
+
+@media screen {
+
+	.rquiz-gapfill {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	.rquiz-gapfill label {
+		margin: 0;
+		padding: 0;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.rquiz-gapfill label img,
+	.rquiz-gapfill .rquiz-target img {
+		margin: 0;
+		padding: 0;
+		vertical-align: middle;
+	}
+
+	.rquiz-gapfill label input {
+		font-size: 95%;
+		margin: 0;
+		padding: 2px;
+		text-align: center;
+		width: 8em;
+	}
+
+	.rquiz-gapfill input.rquiz-error {
+		color: red;
+	}
+
+	.rquiz-gapfill.rquiz-finished label input {
+		background: #efc;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 0 5px 0 #888;
+		display: inline;
+		padding: 0.1em 0.2em;
+	}
+
+	.rquiz-gapfill .rquiz-target {
+		background: #efe;
+		border: 1px dashed #0c0;
+		display: inline-block;
+		min-height: 2em;
+		min-width: 5em;
+		vertical-align: middle;
+	}
+
+	.rquiz-gapfill .rquiz-target.rquiz-highlighted {
+		background: #efe;
+		border: 1px solid #0e0;
+		box-shadow: 0 0 20px 20px #dfd;
+		position: relative;
+	}
+
+	/* styles for a picture puzzle quiz
+	 * based on the gap filling quiz mechanism */
+
+	.rquiz-gapfill table.puzzle {
+		border: 2px ridge black;
+		border-collapse: collapse;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+
+	.rquiz-gapfill table.puzzle tbody,
+	.rquiz-gapfill table.puzzle td,
+	.rquiz-gapfill table.puzzle th,
+	.rquiz-gapfill table.puzzle thead,
+	.rquiz-gapfill table.puzzle tr {
+		border-collapse: collapse;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		width: auto;
+	}
+
+	.rquiz-gapfill table.puzzle td {
+		border: 1px solid #aaa;
+	}
+
+	.rquiz-gapfill table.puzzle .rquiz-target {
+		background: #eee;
+		border: none;
+		height: 100px;
+		width: 100px;
+	}
+
+	.rquiz-gapfill table.puzzle .rquiz-target * {
+		border: none;
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.rquiz-gapfill table.puzzle .rquiz-highlighted {
+		background: #efe;
+		border: 1px dashed #0e0;
+		box-shadow: none !important;
+		margin: -1px;
+	}
+
+	.rquiz-gapfill .rquiz-piece.puzzle {
+		padding: 0;
+	}
+
+	.rquiz-gapfill .rquiz-piece.puzzle img {
+		margin: 0;
+	}
+
+}
+
+@media print {
+
+	.rquiz-gapfill {
+		display: block;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+
+	.rquiz-gapfill .rquiz-pool {
+		border-top: 1px solid #d0d0d0;
+		display: block;
+		margin: 1em 0 0 0;
+		padding: 1em 0 0 0;
+	}
+
+	.rquiz-gapfill label {
+		border-bottom: 1px solid #ccc;
+	}
+
+	.rquiz-gapfill label img {
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	.rquiz-gapfill label input {
+		border: none;
+		visibility: hidden;
+		width: 7em;
+	}
+
+	.rquiz-gapfill .rquiz-piece {
+		border-radius: 0.2em;
+		display: inline-block;
+		margin: 0 0.5em 0 0;
+		padding: 0.2em 0.7em;
+		border: 1px solid #ccc;
+	}
+
+	.rquiz-gapfill .rquiz-piece.puzzle {
+		border-radius: 0;
+		margin: 0 1em 1em 0;
+		padding: 0;
+	}
+
+	.rquiz-gapfill .rquiz-piece.puzzle img {
+		margin: 0;
+		padding: 0;
+		vertical-align: bottom;
+	}
+
+	.rquiz-gapfill .rquiz-target .rquiz-piece {
+		display: none;
+	}
+
+}

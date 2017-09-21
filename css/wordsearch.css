@@ -1,0 +1,126 @@
+
+@media screen {
+
+	.rquiz-wordsearch {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	.rquiz-wordsearch table {
+		border-collapse: collapse;
+		display: inline-table;
+		margin: 0 2em 2em 10px;
+		vertical-align: top;
+	}
+
+	.rquiz-wordsearch table td {
+		background: #fff;
+		border: 1px solid #000;
+		cursor: pointer;
+		font-weight: bold;
+		font-family: Verdana, sans-serif;
+		height: 1.5em;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 1.5em;
+	}
+
+	.rquiz-wordsearch.rquiz-finished table td {
+		cursor: default;
+	}
+
+	.rquiz-wordsearch table .rquiz-fixed {
+		background: #cfc;
+	}
+
+	.rquiz-wordsearch table .rquiz-highlighted {
+		background: #fcc;
+		border-color: #fcc;
+		box-shadow: 0 0 20px 10px #fcc;
+		color: red;
+		z-index: 1;
+	}
+
+	.rquiz-wordsearch table + aside {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		width: 20em;
+	}
+
+	.rquiz-wordsearch table + aside h2 {
+		font-size: 105%;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.rquiz-wordsearch table + aside ol {
+		margin: 0.5em 0 2em 0;
+		padding: 0 0 0 2em;
+	}
+
+	.rquiz-wordsearch table + aside li:empty {
+		border-bottom: 1px solid #000;
+		margin: 0;
+		padding: 0 0 0.2em 0;
+	}
+
+	.rquiz-wordsearch:not(.rquiz-finished) > .rquiz-result {
+		display: block;
+		visibility: hidden;
+	}
+
+}
+
+@media print {
+
+	.rquiz-wordsearch {
+		clear: both;
+		display: block;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+
+	.rquiz-wordsearch table {
+		border-collapse: collapse;
+		font-size: 12pt;
+		margin: 0 2em 0 0;
+		padding: 0;
+	}
+
+	.rquiz-wordsearch table td {
+		background: #fff;
+		border: 0.1pt solid #000;
+		font-weight: bold;
+		font-family: Verdana, sans-serif;
+		height: 1.5em;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 1.5em;
+	}
+
+	.rquiz-wordsearch table + aside {
+		display: block;
+		margin: 2em 0 0 0;
+		padding: 0;
+		width: 20em;
+	}
+
+	.rquiz-wordsearch table + aside h2 {
+		font-size: 105%;
+		margin: 0;
+		padding: 0 0 0 2.5em;
+	}
+
+	.rquiz-wordsearch table + aside li:empty {
+		border-bottom: 0.1pt solid #000;
+		margin: 0 0 1em 0;
+		padding: 0;
+	}
+
+}

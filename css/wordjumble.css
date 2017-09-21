@@ -1,0 +1,57 @@
+
+@media screen {
+
+	.rquiz-wordjumble {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	.rquiz-wordjumble label {
+		background: #efd;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #694;
+		cursor: pointer;
+		display: inline-block;
+		margin: 0 0.3em;
+		padding: 0.1em;
+	}
+
+	.rquiz-wordjumble label input {
+		font-size: 95%;
+		padding: 0 0.2em;
+		text-align: center;
+		width: 5em;
+	}
+
+	.rquiz-wordjumble label input.rquiz-error {
+		color: red;
+	}
+
+}
+
+@media print {
+
+	.rquiz-wordjumble {
+		display: block;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+
+	.rquiz-wordjumble label {
+		background: #eee;
+		border-bottom: 0.11pt solid #ccc;
+		margin: 0px 0px 10px 0px;
+		padding: 0px;
+		white-space: nowrap;
+	}
+
+	.rquiz-wordjumble label input {
+		margin: 0px;
+		padding: 0px;
+		visibility: hidden;
+		width: 8em;
+	}
+
+}

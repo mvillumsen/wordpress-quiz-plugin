@@ -1,0 +1,131 @@
+
+@media screen {
+
+	.rquiz-multichoice {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	.rquiz-multichoice ol {
+		counter-reset: level01;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.rquiz-multichoice ol li {
+		display: inline-block;
+		margin: 0 1em 1em 0;
+		padding: 0;
+	}
+
+	.rquiz-multichoice ol input {
+		clip: rect(0 0 0 0);
+		cursor: pointer;
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+
+	.rquiz-multichoice ol label {
+		background: #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 5px 1px #bbb;
+		cursor: pointer;
+		display: block;
+		padding: 0.5em 1em;
+		position: relative;
+		margin: 0;
+	}
+
+	.rquiz-multichoice.rquiz-finished ol label {
+		cursor: default;
+	}
+
+	.rquiz-multichoice ol label:before {
+		display: inline-block;
+		content: counter(level01, upper-latin) ")";
+		counter-increment: level01;
+		margin: 0;
+		padding: 0 0 0 0.2em;
+	}
+
+	.rquiz-multichoice ol input:checked + label {
+		background: #fee;
+		border: 1px solid #999;
+		box-shadow: 0 0 5px #bbb inset;
+		margin: -1px;
+	}
+
+	.rquiz-multichoice.rquiz-finished ol label {
+		color: #0a0;
+	}
+
+	.rquiz-multichoice.rquiz-finished li[data-x] label {
+		color: #a00;
+
+	}
+
+	.rquiz-multichoice.rquiz-finished ol label:after {
+		bottom: -0.5em;
+		color: red;
+		content: "✗";
+		font-size: 150%;
+		position: absolute;
+		right: -0.2em;
+		text-shadow: 2px 1px 3px #888;
+	}
+
+	.rquiz-multichoice.rquiz-finished li:not([data-x]) input:checked + label {
+		background: #efe;
+	}
+
+	.rquiz-multichoice.rquiz-finished li:not([data-x]) input:checked + label:after,
+	.rquiz-multichoice.rquiz-finished li[data-x] input:not(:checked) + label:after {
+		bottom: -0.1em;
+		color: #0b0;
+		content: "✓";
+		right: -0.3em;
+	}
+
+}
+
+@media print {
+
+	.rquiz-multichoice {
+		display: block;
+		page-break-before: always;
+		page-break-inside: avoid;
+	}
+
+	.rquiz-multichoice ol {
+		counter-reset: level01;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.rquiz-multichoice ol li {
+		display: inline-block;
+		margin: 0 1em 0.5em 0;
+		padding: 0;
+		list-style-position: inside;
+		list-style-type: upper-alpha;
+	}
+
+	.rquiz-multichoice ol li:before {
+		content: counter(level01, upper-latin) ") ";
+		counter-increment: level01;
+		padding-right: 0.1em;
+	}
+
+	.rquiz-multichoice ol li label {
+		padding: 0.5em 1em 0.5em 0;
+	}
+
+	.rquiz-multichoice ol li input {
+		display: none;
+	}
+}

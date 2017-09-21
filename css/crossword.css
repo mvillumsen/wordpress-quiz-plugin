@@ -1,0 +1,312 @@
+
+@media screen {
+
+	.rquiz-crossword {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	.rquiz-crossword table {
+		border-collapse: collapse;
+		margin: 0 10px;
+	}
+
+	.rquiz-crossword table td {
+		font-weight: bold;
+		font-family: Verdana, sans-serif;
+		height: 1.5em;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 1.5em;
+	}
+
+	.rquiz-crossword table [data-c] {
+		background: #fff;
+		border: 1px solid #000;
+	}
+
+	.rquiz-crossword:not(.rquiz-finished) table [data-tag] {
+		cursor: pointer;
+	}
+
+	.rquiz-crossword table [data-tag]:before {
+		color: red;
+		content: attr(data-tag);
+		font-size: 80%;
+		margin: -0.3em 0 0 -0.5em;
+		opacity: 0.4;
+		position: absolute;
+	}
+
+	.rquiz-crossword dialog {
+		background: rgba(255,255,255, 0.8);
+		border: none;
+		display: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		width: calc(100vw - 21px);
+	}
+
+	.rquiz-crossword dialog div {
+		background: #fff;
+		border: 1px solid #888;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #bbb;
+		display: block;
+		margin: 0;
+		max-width: 600px;
+		min-height: 120px;
+		padding: 0;
+		position: relative;
+		vertical-align: middle;
+	}
+
+	.rquiz-crossword dialog div > span:first-of-type {
+		color: #fff;
+		cursor: pointer;
+		display: block;
+		font-weight: bold;
+		height: 1em;
+		position: absolute;
+		right: 0.1em;
+		top: 0.1em;
+		width: 1em;
+	}
+
+	.rquiz-crossword dialog div > h2 {
+		background: #888;
+		color: #fff;
+		display: block;
+		font-family: Arial, sans;
+		font-size: 110%;
+		margin: 0;
+		padding: 0.1em 0.5em;
+		text-shadow: 0 0 1px black;
+	}
+
+	.rquiz-crossword dialog div > p:first-of-type {
+		cursor: help;
+		font-family: Arial, sans;
+		height: 0;
+		margin: 0;
+		overflow: hidden;
+		padding: 1.5em 0 0 1.5em;
+		position: absolute;
+		right: 0.5em;
+		top: 1.8em;
+		width: 0;
+	}
+
+	.rquiz-crossword dialog div > p:first-of-type:before {
+		background: #69f;
+		border: 3px double #fff;
+		border-radius: 1em;
+		color: #fff;
+		content: "?";
+		display: block;
+		font-weight: bold;
+		height: 1em;
+		overflow: visible;
+		padding: 0 0.1em 0.2em 0.1em;
+		position: absolute;
+		left: 0;
+		opacity: 0.5;
+		text-align: center;
+		top: 0;
+		width: 1em;
+	}
+
+	.rquiz-crossword dialog div > p:first-of-type.rquiz-show {
+		background: #eef;
+		border: 1px solid #88f;
+		border-radius: 5px;
+		height: auto;
+		margin: 0.5em;
+		overflow: visible;
+		padding: 0.5em;
+		width: auto;
+		z-index: 1;
+	}
+
+	.rquiz-crossword dialog div > p:first-of-type.rquiz-show:before {
+		background: #f88;
+		content: "×";
+		left: auto;
+		opacity: 1;
+		right: -0.6em;
+		top: -0.6em;
+	}
+
+	.rquiz-crossword dialog form {
+		display: block;
+		margin: 1em;
+		padding: 0;
+	}
+
+	.rquiz-crossword dialog form p {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	.rquiz-crossword dialog div .rquiz-tag {
+		border: 1px solid #000;
+		border-radius: 5px;
+		color: red;
+		display: inline-block;
+		margin: 0 0.3em 0 0;
+		opacity: 0.4;
+		text-align: center;
+		width: 2em;
+	}
+
+	.rquiz-crossword dialog label {
+		background: #cfc;
+		border: 1px solid #0b0;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #bbb;
+		color: #000;
+		cursor: pointer;
+		display: inline-block;
+		font-weight: bold;
+		height: 1em;
+		margin: 0 0.1em 0 0;
+		padding: 0.1em 0.2em 0.3em 0.2em;
+		text-align: center;
+		vertical-align: middle;
+		width: 1em;
+	}
+
+	.rquiz-crossword dialog label.rquiz-focus {
+		background: #fcc;
+		border: 1px solid #f00;
+		color: #f00;
+	}
+
+	.rquiz-crossword dialog button {
+		background: #efe;
+		border-bottom: 1px solid #888;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #888;
+		border-top: 1px solid #fff;
+		border-radius: 5px;
+		box-shadow: 0 0 4px #888;
+		color: #080;
+		cursor: pointer;
+		font-weight: bold;
+		margin: 8px;
+		padding: 0.1em 0.5em;
+		text-align: center;
+		text-shadow: 0 0 1px #fff;
+	}
+
+	.rquiz-crossword dialog input {
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+		position: absolute;
+	}
+
+	.rquiz-crossword .rquiz-pool {
+		margin-top: 2em;
+	}
+
+	.rquiz-crossword .rquiz-pool .rquiz-hidden {
+		visibility: hidden;
+	}
+
+}
+
+@media print {
+
+	.rquiz-crossword {
+		clear: both;
+		display: block;
+		page-break-before: always;
+		page-break-inside: avoid;
+		position: relative;
+	}
+
+	.rquiz-crossword table {
+		font-size: 10pt;
+	}
+
+	.rquiz-crossword table:first-of-type {
+		border-collapse: collapse;
+		margin: 0 0 4em 0;
+	}
+
+	.rquiz-crossword table:first-of-type td {
+		font-weight: bold;
+		font-family: Verdana, sans-serif;
+		height: 1.5em;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		width: 1.5em;
+	}
+
+	.rquiz-crossword table:first-of-type [data-c] {
+		border: 0.1pt solid #000;
+	}
+
+	.rquiz-crossword table:first-of-type [data-tag]:before {
+		content: attr(data-tag);
+		font-size: 70%;
+		font-weight: normal;
+		margin: -0.3em 0 0 -0.5em;
+		position: absolute;
+	}
+
+	.rquiz-crossword dialog {
+		display: none;
+	}
+
+	.rquiz-crossword table:last-of-type,
+	.rquiz-crossword table:last-of-type td,
+	.rquiz-crossword table:last-of-type th {
+		border-collapse: collapse;
+		border-left: 0.1pt solid #000;
+		border-right: 0.1pt solid #000;
+	}
+
+	.rquiz-crossword table:last-of-type th {
+		border-bottom: 0.1pt solid #000;
+		width: 49%;
+	}
+
+	.rquiz-crossword table:last-of-type td {
+		border-top: 0.1pt solid #000;
+		padding: 0 0.5em;
+		vertical-align: top;
+	}
+
+	.rquiz-crossword table:last-of-type dl {
+		margin: 0;
+		padding: 0.2em 0 0 calc(0.2pt + 3em);
+	}
+
+	.rquiz-crossword table:last-of-type dt {
+		border: 0.1pt solid black;
+		display: block;
+		margin: 0 0 0 -3em;
+		position: absolute;
+		text-align: center;
+		width: 2em;
+	}
+
+	.rquiz-crossword table:last-of-type dd {
+		display: inline;
+		margin: 0;
+		padding: 0;
+	}
+
+	.rquiz-crossword table:last-of-type dd:after {
+		content: " ";
+		display: block;
+		margin: 0 0 1em 0;
+	}
+}

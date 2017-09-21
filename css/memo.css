@@ -1,0 +1,140 @@
+
+@media screen {
+
+	.rquiz-memo {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		width: calc(100% - 11px);
+	}
+
+	/* patch rquiz-pool so it is visually unobtrusive
+	 * and doesn't vanish when the quiz is finished */
+	.rquiz-memo .rquiz-pool {
+		background: none;
+		box-shadow: none;
+	}
+
+	.rquiz-memo.rquiz-finished .rquiz-pool {
+		display: block;
+	}
+
+	/* patch display:none on rquiz-result into visibility:hidden */
+	.rquiz-memo:not(.rquiz-finished) .rquiz-result {
+		display: block;
+		visibility: hidden;
+	}
+
+	.rquiz-memo.rquiz-finished .rquiz-result {
+		visibility: visible;
+	}
+
+	/* CSS flipping animations by David Walsh
+	 * https://davidwalsh.name/css-flip
+	 */
+	.rquiz-memocard {
+		cursor: pointer;
+		display: inline-block;
+		font-size: 12px;
+		height: 120px;
+		margin: 0 10px 10px 0;
+		padding: 0;
+		-webkit-perspective: 400px;
+		position: relative;
+		transform-style: preserve-3d;
+		width: 120px;
+	}
+
+	/* flip the pane when opened, fixed or the quiz is finished */
+	.rquiz-memocard.rquiz-fixed > span > span,
+	.rquiz-memocard.rquiz-open > span > span,
+	.rquiz-finished .rquiz-memocard > span > span {
+	    -webkit-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		-o-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+	}
+
+	.rquiz-memocard.rquiz-fixed > span > span:first-child,
+	.rquiz-memocard.rquiz-open > span > span:first-child,
+	.rquiz-finished .rquiz-memocard > span > span:first-child {
+		box-shadow: none;
+	    -webkit-transform: rotateY(-180deg);
+		-moz-transform: rotateY(-180deg);
+		-o-transform: rotateY(-180deg);
+		-ms-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+		z-index: 0;
+	}
+
+	.rquiz-memocard > span,
+	.rquiz-memocard > span > span {
+		height: 120px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 120px;
+	}
+
+	.rquiz-memocard > span {
+		background: transparent;
+		transform-style: preserve-3d;
+		transition: 0.6s;
+	}
+
+	.rquiz-memocard > span > span {
+		backface-visibility: hidden;
+		transition: 0.6s;
+		transform-style: preserve-3d;
+	}
+
+	.rquiz-memocard > span > span:first-child {
+		background: url(../images/memo.png);
+		box-shadow: 0 0 5px #bbb;
+	    -webkit-transform: rotateY(0deg);
+		-moz-transform: rotateY(0deg);
+		-o-transform: rotateY(0deg);
+		-ms-transform: rotateY(0deg);
+		transform: rotateY(0deg);
+		z-index: 1;
+	}
+
+	.rquiz-memocard > span > span {
+		background: #fff;
+		display: inline-table;
+	    -webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		-o-transform: rotateY(180deg);
+		-ms-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+	/* centered contents */
+	.rquiz-memocard > span > span span {
+		border: 6px solid #f88;
+		display: table-cell;
+		height: 108px;
+		text-align: center;
+		vertical-align: middle;
+		width: 108px;
+	}
+
+	.rquiz-memocard.rquiz-fixed > span > span span,
+	.rquiz-finished .rquiz-memocard > span > span span {
+		border-color: #af8;
+	}
+
+	.rquiz-memocard img {
+		vertical-align: middle;
+	}
+
+}
+
+@media print {
+
+	.rquiz-memo {
+		display: none;
+	}
+
+}

@@ -1,0 +1,217 @@
+
+@media screen {
+
+	.rquiz-wordguess {
+		display: block;
+		margin: 10px 10px;
+		padding: 0;
+		position: relative;
+		width: calc(100% - 11px);
+	}
+
+	/* When shipped counter is a picture with 166x200px.
+	 * You'll need to change the counter measurements
+	 * if you want to use a different picture! */
+	.rquiz-wordguess .rquiz-counter {
+		background: #fff url(../images/wordguess-counter.png) 0px 200px;
+		border: 1px solid black;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #bbb;
+		display: inline-block;
+		height: 200px;
+		margin: 0.2em;
+		width: 166px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="0"] {
+		background-position: 0px 2200px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="1"] {
+		background-position: 0px 2000px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="2"] {
+		background-position: 0px 1800px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="3"] {
+		background-position: 0px 1600px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="4"] {
+		background-position: 0px 1400px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="5"] {
+		background-position: 0px 1200px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="6"] {
+		background-position: 0px 1000px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="7"] {
+		background-position: 0px 800px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="8"] {
+		background-position: 0px 600px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="9"] {
+		background-position: 0px 400px;
+	}
+
+	.rquiz-wordguess .rquiz-counter[data-remaining="10"] {
+		background-position: 0px 200px;
+	}
+
+	.rquiz-wordguess .rquiz-pool {
+		cursor: pointer;
+		position: relative;
+	}
+
+	.rquiz-wordguess.rquiz-finished .rquiz-pool {
+		cursor: default;
+		display: block;
+	}
+
+	.rquiz-wordguess .rquiz-pool > p:first-of-type {
+		cursor: help;
+		font-family: Arial, sans;
+		height: 0;
+		margin: 0;
+		overflow: hidden;
+		padding: 1.5em 0 0 1.5em;
+		position: absolute;
+		right: 0.5em;
+		top: 0.5em;
+		width: 0;
+	}
+
+	.rquiz-wordguess.rquiz-finished .rquiz-pool > p:first-of-type {
+		display: none;
+	}
+
+	.rquiz-wordguess .rquiz-pool > p:first-of-type:before {
+		background: #69f;
+		border: 3px double #fff;
+		border-radius: 1em;
+		color: #fff;
+		content: "?";
+		display: block;
+		font-weight: bold;
+		height: 1em;
+		overflow: visible;
+		padding: 0 0.1em 0.2em 0.1em;
+		position: absolute;
+		left: 0;
+		text-align: center;
+		top: 0;
+		width: 1em;
+	}
+
+	.rquiz-wordguess .rquiz-pool > p:first-of-type.rquiz-show {
+		background: #fff;
+		border: 1px solid #88f;
+		border-radius: 5px;
+		height: auto;
+		margin: 0.5em;
+		overflow: visible;
+		padding: 0.5em;
+		width: auto;
+		z-index: 1;
+	}
+
+	.rquiz-wordguess .rquiz-pool > p:first-of-type.rquiz-show:before {
+		background: #f88;
+		content: "×";
+		left: auto;
+		opacity: 1;
+		right: -0.6em;
+		top: -0.6em;
+	}
+
+	.rquiz-wordguess .rquiz-pool aside {
+		display: inline-block;
+		margin: 0;
+		padding: 0.2em 0 1em 0;
+		vertical-align: top;
+	}
+
+	.rquiz-wordguess .rquiz-pool aside h2 {
+		font-size: 100%;
+		margin: 0 0 0.5em 1.5em;
+		padding: 0;
+	}
+
+	.rquiz-wordguess .rquiz-pool aside ol {
+		display: inline-block;
+		margin: 0.2em 0 0 0;
+		padding: 0 0 0 1.5em;
+		vertical-align: top;
+		width: 12em;
+	}
+
+	.rquiz-wordguess .rquiz-pool aside li:empty {
+		border-bottom: 1px solid black;
+	}
+
+	.rquiz-wordguess section {
+		display: inline-block;
+		margin: 0.5em 1em 0 1em;
+		vertical-align: top;
+	}
+
+	.rquiz-wordguess section input {
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+		position: absolute;
+	}
+
+	.rquiz-wordguess section ul {
+		height: 1em;
+		list-style: none;
+		margin: 2em 0;
+		padding: 0;
+	}
+
+	.rquiz-wordguess section li {
+		background: #cfc;
+		border: 1px solid #0b0;
+		border-radius: 5px;
+		box-shadow: 0 0 5px #bbb;
+		color: #0b0;
+		display: inline-block;
+		font-weight: bold;
+		height: 1em;
+		margin: 0 0.1em 0 0;
+		padding: 0.1em 0.2em 0.3em 0.2em;
+		text-align: center;
+		vertical-align: middle;
+		white-space: nowrap;
+		width: 1em;
+	}
+
+	.rquiz-wordguess section ul:last-of-type li {
+		background: #fcc;
+		border: 1px solid #f00;
+		color: #f00;
+		white-space: normal;
+	}
+
+	.rquiz-wordguess:not(.rquiz-finished) > .rquiz-result {
+		display: block;
+		visibility: hidden;
+	}
+
+}
+
+@media print {
+
+	.rquiz-wordguess {
+		display: none;
+	}
+
+}
